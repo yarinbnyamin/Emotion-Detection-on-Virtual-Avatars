@@ -1,0 +1,17 @@
+mmcv-full==1.3.8
+mmcv==1.3.8
+mmdet==2.18.0
+mmengine==0.10.3
+mmpose==0.29.0
+mss==9.0.1
+anime_face_detector==0.0.9
+clip==1.0
+matplotlib==3.8.3
+numpy==1.24.4
+opencv_python_headless==4.7.0.72
+Pillow==10.3.0
+scikit_learn==1.4.2
+seaborn==0.13.2
+torch==2.2.1
+torchvision==0.17.1
+tqdm==4.65.0
