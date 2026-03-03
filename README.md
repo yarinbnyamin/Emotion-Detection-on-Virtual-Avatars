@@ -1,32 +1,58 @@
-<h1 align="center">Emotion Detection for Virtual Avatars</h2>
+<h1 align="center">Emotion Detection for Virtual Avatars</h1>
 <p align="center">
 <a href="https://github.com/yarinbnyamin/Emotion-Detection-on-Virtual-Avatars/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+<a href="https://www.python.org/downloads/release/python-31212/"><img alt="Python Version" src="https://img.shields.io/badge/python-3.12-blue"></a>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
 
 # Info
 
-Note: This project is in progress, detection is not optimal.
+This project implements a real-time emotion recognition pipeline 
+for virtual avatar faces using face detection and transformer-based 
+facial expression classification.
 
-This project aims to help you detect the emotions of different virtual avatars.
+⚠️ This project is currently under active development. 
+Performance is still being optimized and results should be considered preliminary.
+
 
 # Usage
 
-1. Copy the project and pip install all the requirements:
+1. Copy the project and install all requirements:
 > pip install -r requirements.txt
-2. Download the [Dataset](https://www.kaggle.com/datasets/mertkkl/manga-facial-expressions) and place it in the project dir with the name "dataset_manga"
-3. Start the emotion_detector.py file, this will train your model
-4. When this is done, start the emotion_detector.py file again
-5. This time pop-up screen will appear and capture the left half of your screen for faces (you can customize the detection size and location in line 142)
-6. Now you can place different characters' images and detect the emotion of them
-7. Pressing the q button will close the program
-8. (optional) You can replace the expression name with the assossiated emotion
+
+2. Download a YOLO face model from:  
+> https://github.com/akanametov/yolo-face?tab=readme-ov-file#models
+
+We used `yolov11n-face` (update line 30 in `emotion_detector.py` if you use another model).
+
+3. Run the script:
+> python emotion_detector.py 
+
+This will open a window capturing the left half of your screen (customizable in line 34).
+
+4. Place different characters' images in the captured area to detect their emotions in real time.
+
+5. Press `q` to close the program.
 
 
 # Pipeline
 
-I am using:
-1. [CLIP](https://github.com/openai/CLIP) library for obtain embeddings for images
-2. [Anime Face Detector](https://github.com/hysts/anime-face-detector) library to detect virtual avatars faces
-3. [Manga Facial Expressions Dataset](https://www.kaggle.com/datasets/mertkkl/manga-facial-expressions) to fine-tuning the model
+The system is based on the following components:
+
+1. [YOLO-Face](https://github.com/akanametov/yolo-face) – used for real-time face detection.  
+2. [ViT-FER](https://huggingface.co/trpakov/vit-face-expression) – used for facial emotion classification.  
+3. [UIBVFED: Virtual Facial Expression Dataset](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0231266) – used to evaluate and validate the complete pipeline.
+
+# Citations
+
+If you find our work interesting or the repo useful, please consider citing this [paper](https://arxiv.org/abs/2601.15914):
+
+```
+@article{benyamin2026latency,
+  title={The Latency Wall: Benchmarking Off-the-Shelf Emotion Recognition for Real-Time Virtual Avatars},
+  author={Benyamin, Yarin},
+  journal={arXiv preprint arXiv:2601.15914},
+  year={2026}
+}
+```
