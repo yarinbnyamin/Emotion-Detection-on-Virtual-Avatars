@@ -4,5 +4,5 @@ opencv_python_headless==4.7.0.72
 Pillow==12.1.1
 scikit_learn==1.5.0
 seaborn==0.13.2
-transformers==4.53.0
+transformers==5.0.0rc3
 ultralytics==8.4.7
