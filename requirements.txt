@@ -1,7 +1,7 @@
 mss==9.0.1
 matplotlib==3.8.3
 opencv_python_headless==4.7.0.72
-Pillow==12.1.1
+Pillow==12.2.0
 scikit_learn==1.5.0
 seaborn==0.13.2
 transformers==5.0.0rc3
